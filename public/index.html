@@ -38,33 +38,13 @@
 
       <!-- ===== Main grid: explorer | center | inspector ===== -->
       <main class="workspace">
-        <!-- Explorer -->
+        <!-- Explorer (hydrated from /data/explorer/explorer.json) -->
         <aside class="panel explorer">
           <div class="panel-header">
-            <span class="panel-title">Explorer</span>
+            <span class="panel-title" data-panel-title="explorer">Explorer</span>
             <button class="icon-btn small" title="Close"><svg viewBox="0 0 16 16" width="10" height="10"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.4"/></svg></button>
           </div>
-          <ul class="tree" id="tree">
-            <li class="tree-node expanded">
-              <span class="tree-row"><span class="twisty">▾</span><span class="file-icon folder"></span><span class="name">cb-examples2</span></span>
-              <ul class="tree-children">
-                <li class="tree-node"><span class="tree-row"><span class="twisty">▸</span><span class="file-icon folder"></span><span class="name">01_markdown</span></span></li>
-                <li class="tree-node"><span class="tree-row"><span class="twisty">▸</span><span class="file-icon folder"></span><span class="name">02_webapps</span></span></li>
-                <li class="tree-node expanded">
-                  <span class="tree-row"><span class="twisty">▾</span><span class="file-icon folder"></span><span class="name">03_hello_world</span></span>
-                  <ul class="tree-children">
-                    <li class="tree-node"><span class="tree-row selected"><span class="twisty"></span><span class="file-icon py"></span><span class="name">hello_world.py</span></span></li>
-                    <li class="tree-node"><span class="tree-row"><span class="twisty"></span><span class="file-icon md"></span><span class="name">readme.md</span></span></li>
-                  </ul>
-                </li>
-                <li class="tree-node"><span class="tree-row"><span class="twisty">▸</span><span class="file-icon folder"></span><span class="name">04_data_import</span></span></li>
-                <li class="tree-node"><span class="tree-row"><span class="twisty">▸</span><span class="file-icon folder"></span><span class="name">05_fake_data</span></span></li>
-                <li class="tree-node"><span class="tree-row"><span class="twisty">▸</span><span class="file-icon folder"></span><span class="name">06_data_cleaning</span></span></li>
-                <li class="tree-node"><span class="tree-row"><span class="twisty"></span><span class="file-icon project"></span><span class="name">cb-examples2.celbridge</span></span></li>
-                <li class="tree-node"><span class="tree-row"><span class="twisty"></span><span class="file-icon md"></span><span class="name">readme.md</span></span></li>
-              </ul>
-            </li>
-          </ul>
+          <div id="explorer-body"></div>
         </aside>
 
         <div class="resizer resizer-col" data-axis="x" data-var="--explorer-w" data-direction="1" data-min="140" data-max="600" role="separator" aria-orientation="vertical" aria-label="Resize Explorer"></div>
@@ -72,77 +52,42 @@
         <!-- Center column: editor + console -->
         <section class="center">
           <div class="editor-area">
-            <div class="tabs">
-              <div class="tab active">
-                <span class="file-icon py"></span>
-                <span class="tab-name">hello_world.py</span>
-                <button class="tab-close" aria-label="Close tab">×</button>
-              </div>
-              <div class="tabs-spacer"></div>
-              <button class="icon-btn small" title="Split"><svg viewBox="0 0 16 16" width="12" height="12"><rect x="2" y="2" width="5" height="12" stroke="currentColor" fill="none" stroke-width="1.2"/><rect x="9" y="2" width="5" height="12" stroke="currentColor" fill="none" stroke-width="1.2"/></svg></button>
-            </div>
+            <!-- Tabs hydrated from /data/document_editor/document_editor.json -->
+            <div class="tabs" id="editor-tabs"></div>
 
             <div class="editor">
-              <pre class="code"><code id="code-block"><span class="ln">1</span><span class="tok kw">import</span> <span class="tok mod">sys</span>
-<span class="ln">2</span>
-<span class="ln">3</span><span class="tok kw">def</span> <span class="tok fn">main</span>():
-<span class="ln">4</span>
-<span class="ln">5</span>    <span class="tok com"># Check if script was called with a name argument</span>
-<span class="ln">6</span>    <span class="tok kw">if</span> <span class="tok fn">len</span>(<span class="tok mod">sys</span>.argv) &gt; <span class="tok num">1</span>:
-<span class="ln">7</span>
-<span class="ln">8</span>        <span class="tok com"># Say hello to the named person</span>
-<span class="ln">9</span>        name = <span class="tok mod">sys</span>.argv[<span class="tok num">1</span>]
-<span class="ln">10</span>        <span class="tok fn">print</span>(<span class="tok str">f"Hello {name}!"</span>)
-<span class="ln">11</span>    <span class="tok kw">else</span>:
-<span class="ln">12</span>
-<span class="ln">13</span>        <span class="tok com"># Default to "Hello world!"</span>
-<span class="ln">14</span>        <span class="tok fn">print</span>(<span class="tok str">"Hello world!"</span>)
-<span class="ln">15</span>
-<span class="ln">16</span>
-<span class="ln">17</span><span class="tok kw">if</span> __name__ == <span class="tok str">"__main__"</span>:
-<span class="ln">18</span>    <span class="tok fn">main</span>()
-<span class="ln">19</span></code></pre>
+              <pre class="code"><code id="code-block"></code></pre>
             </div>
           </div>
 
           <div class="resizer resizer-row" data-axis="y" data-var="--console-h" data-direction="-1" data-min="60" data-max="600" role="separator" aria-orientation="horizontal" aria-label="Resize Console"></div>
 
+          <!-- Console hydrated from /data/console/console.json -->
           <div class="console">
             <div class="panel-header">
-              <span class="panel-title">Console</span>
+              <span class="panel-title" data-panel-title="console">Console</span>
               <div class="header-actions">
                 <button class="icon-btn small" title="Collapse">▲</button>
                 <button class="icon-btn small" title="Close"><svg viewBox="0 0 16 16" width="10" height="10"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.4"/></svg></button>
               </div>
             </div>
-            <div class="console-body">
-              <div class="console-line meta">Celbridge v0.2.6 - Python v3.13.12</div>
-              <div class="console-line">&gt;&gt;&gt; run <span class="str">"03_hello_world/hello_world.py"</span> <span class="str">"Universe"</span></div>
-              <div class="console-line">Hello Universe!</div>
-              <div class="console-line prompt">&gt;&gt;&gt; <span class="caret"></span></div>
-            </div>
+            <div class="console-body" id="console-body"></div>
           </div>
         </section>
 
         <div class="resizer resizer-col" data-axis="x" data-var="--inspector-w" data-direction="-1" data-min="140" data-max="600" role="separator" aria-orientation="vertical" aria-label="Resize Inspector"></div>
 
-        <!-- Inspector -->
+        <!-- Inspector hydrated from /data/inspector/inspector.json -->
         <aside class="panel inspector">
           <div class="panel-header">
-            <span class="panel-title">Inspector</span>
+            <span class="panel-title" data-panel-title="inspector">Inspector</span>
             <button class="icon-btn small" title="Close"><svg viewBox="0 0 16 16" width="10" height="10"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.4"/></svg></button>
           </div>
-          <div class="inspector-body">
-            <div class="inspector-row">
-              <span class="file-icon py"></span>
-              <span class="inspector-name">hello_world.py</span>
-              <button class="icon-btn small right" title="Add"><svg viewBox="0 0 16 16" width="12" height="12"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button>
-            </div>
-          </div>
+          <div class="inspector-body" id="inspector-body"></div>
         </aside>
       </main>
     </div>
 
-    <script src="app.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>

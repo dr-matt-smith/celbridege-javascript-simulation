@@ -5,12 +5,16 @@
   "description": "HTML/CSS/JS mockup of the Celbridge application shell for prototyping future features.",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "jsdom": "^25.0.1",
+    "nodemon": "^3.1.0",
+    "vitest": "^2.1.9"
   }
 }

@@ -1,0 +1,30 @@
+{
+  "tabs": [
+    {
+      "name": "hello_world.py",
+      "icon": "py",
+      "active": true,
+      "lines": [
+        [{ "t": "kw", "v": "import" }, { "v": " " }, { "t": "mod", "v": "sys" }],
+        [],
+        [{ "t": "kw", "v": "def" }, { "v": " " }, { "t": "fn", "v": "main" }, { "v": "():" }],
+        [],
+        [{ "v": "    " }, { "t": "com", "v": "# Check if script was called with a name argument" }],
+        [{ "v": "    " }, { "t": "kw", "v": "if" }, { "v": " " }, { "t": "fn", "v": "len" }, { "v": "(" }, { "t": "mod", "v": "sys" }, { "v": ".argv) > " }, { "t": "num", "v": "1" }, { "v": ":" }],
+        [],
+        [{ "v": "        " }, { "t": "com", "v": "# Say hello to the named person" }],
+        [{ "v": "        name = " }, { "t": "mod", "v": "sys" }, { "v": ".argv[" }, { "t": "num", "v": "1" }, { "v": "]" }],
+        [{ "v": "        " }, { "t": "fn", "v": "print" }, { "v": "(" }, { "t": "str", "v": "f\"Hello {name}!\"" }, { "v": ")" }],
+        [{ "v": "    " }, { "t": "kw", "v": "else" }, { "v": ":" }],
+        [],
+        [{ "v": "        " }, { "t": "com", "v": "# Default to \"Hello world!\"" }],
+        [{ "v": "        " }, { "t": "fn", "v": "print" }, { "v": "(" }, { "t": "str", "v": "\"Hello world!\"" }, { "v": ")" }],
+        [],
+        [],
+        [{ "t": "kw", "v": "if" }, { "v": " __name__ == " }, { "t": "str", "v": "\"__main__\"" }, { "v": ":" }],
+        [{ "v": "    " }, { "t": "fn", "v": "main" }, { "v": "()" }],
+        []
+      ]
+    }
+  ]
+}

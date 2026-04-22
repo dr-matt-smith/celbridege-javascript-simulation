@@ -1,0 +1,17 @@
+{
+  "title": "Console",
+  "lines": [
+    { "kind": "meta", "text": "Celbridge v0.2.6 - Python v3.13.12" },
+    {
+      "kind": "command",
+      "segments": [
+        { "text": ">>> run " },
+        { "text": "\"03_hello_world/hello_world.py\"", "style": "str" },
+        { "text": " " },
+        { "text": "\"Universe\"", "style": "str" }
+      ]
+    },
+    { "kind": "output", "text": "Hello Universe!" },
+    { "kind": "prompt", "text": ">>> " }
+  ]
+}

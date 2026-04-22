@@ -1,0 +1,6 @@
+{
+  "title": "Inspector",
+  "items": [
+    { "name": "hello_world.py", "icon": "py" }
+  ]
+}

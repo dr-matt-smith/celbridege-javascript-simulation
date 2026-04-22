@@ -16,7 +16,18 @@
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:5174/)",
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
       "Bash(curl -s http://localhost:3000/styles.css)",
-      "Bash(curl -s http://localhost:3000/app.js)"
+      "Bash(curl -s http://localhost:3000/app.js)",
+      "Bash(npm test *)",
+      "Bash(PORT=3101 node *)",
+      "Bash(curl -sf -o /dev/null http://localhost:3101/)",
+      "Bash(curl -s http://localhost:3101/ -o /dev/null)",
+      "Bash(curl -s http://localhost:3101/data/explorer/explorer.json -o /dev/null)",
+      "Bash(curl -s http://localhost:3101/data/console/console.json -o /dev/null)",
+      "Bash(curl -s http://localhost:3101/data/inspector/inspector.json -o /dev/null)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"PORT=3101 node server.js\")",
+      "Bash(lsof -iTCP:3101 -sTCP:LISTEN)",
+      "Bash(kill 5843)"
     ]
   },
   "enableAllProjectMcpServers": true,
