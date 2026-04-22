@@ -1,0 +1,4 @@
+2026-04-21 20:28:25 - celbridge.logging_config - DEBUG - Python logging configured: level=DEBUG, dir=C:\Users\Matt.Smith\Downloads\cb-examples2\celbridge\.logs, file=C:\Users\Matt.Smith\Downloads\cb-examples2\celbridge\.logs\celbridge_20260421_202825.log
+2026-04-21 20:28:25 - celbridge.logging_config - INFO - The Celbridge application log is here: 'C:\Users\Matt.Smith\AppData\Local\Packages\org.celbridge.Celbridge_ykg1nfekv71pc\LocalState\Logs\celbridge_20260421_193748.log'
+2026-04-21 20:28:25 - celbridge.rpc_client - INFO - Connected to RPC server at 127.0.0.1:52840
+2026-04-21 20:28:25 - celbridge.cel_proxy - INFO - Discovered 0 broker tools

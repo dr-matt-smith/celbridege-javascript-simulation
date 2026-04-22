@@ -1,0 +1,23 @@
+export const tree = {
+  name: 'cb-examples2',
+  type: 'folder',
+  expanded: true,
+  children: [
+    { name: '01_markdown', type: 'folder' },
+    { name: '02_webapps', type: 'folder' },
+    {
+      name: '03_hello_world',
+      type: 'folder',
+      expanded: true,
+      children: [
+        { name: 'hello_world.py', type: 'py' },
+        { name: 'readme.md', type: 'md' }
+      ]
+    },
+    { name: '04_data_import', type: 'folder' },
+    { name: '05_fake_data', type: 'folder' },
+    { name: '06_data_cleaning', type: 'folder' },
+    { name: 'cb-examples2.celbridge', type: 'project' },
+    { name: 'readme.md', type: 'md' }
+  ]
+};
