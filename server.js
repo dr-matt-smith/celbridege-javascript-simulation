@@ -35,6 +35,7 @@ const PROJECT_ROUTES = {
   '/':        { project: 'default', label: 'cb-examples2' },
   '/python1': { project: 'python1', label: 'python1' },
   '/python2': { project: 'python2', label: 'python2' },
+  '/map1':    { project: 'map1',    label: 'map1' },
 };
 
 for (const [route, info] of Object.entries(PROJECT_ROUTES)) {

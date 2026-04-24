@@ -1,0 +1,14 @@
+{
+  "title": "Learning",
+  "layout": "learning",
+  "crumb": "Course: Python 101 - Introduction to Python Programming",
+  "heading": "About the course",
+  "tabs": [
+    { "name": "Description", "active": true }
+  ],
+  "description": {
+    "markdown": "Introduction to Python course designed for individuals with little to no programming experience who want to learn Python from the ground up.\n\nYou'll start with fundamental concepts such as variables, conditions, and loops, then gradually progress to more complex and practical topics, including data structures, error handling, and functions.\n\nThe course is structured into small, manageable steps, each combining a brief theoretical explanation with a hands-on task to reinforce learning.\n\nBy the end of the course, you'll have a strong foundation to explore advanced Python frameworks and pursue professional programming development."
+  },
+  "status": { "kind": "ok", "text": "Done" },
+  "nextButton": { "label": "Next: Getting to know you" }
+}

@@ -37,6 +37,13 @@ function renderNode(node) {
   name.textContent = node.name;
   row.appendChild(name);
 
+  if (node.meta) {
+    const meta = document.createElement('span');
+    meta.className = 'tree-meta';
+    meta.textContent = node.meta;
+    row.appendChild(meta);
+  }
+
   if (node.runnable) {
     const run = document.createElement('button');
     run.className = 'tree-run-btn';

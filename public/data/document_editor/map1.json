@@ -1,0 +1,24 @@
+{
+  "layout": "knowledge-map",
+  "heading": "Introduction to Python",
+  "progress": { "completed": 13, "total": 20, "percent": 65 },
+  "columns": [
+    [
+      { "name": "Program with numbers",  "icons": ["coding", "theory"] },
+      { "name": "Basic data types",      "icons": ["coding", "theory"] },
+      { "name": "Comparisons",           "icons": ["coding", "theory"] },
+      { "name": "Math functions",        "icons": ["coding", "theory"] }
+    ],
+    [
+      { "name": "Taking user's input",   "icons": ["coding", "theory"] },
+      { "name": "Declaring functions",   "icons": ["coding", "theory"] },
+      { "name": "String formatting",     "icons": ["coding", "theory"] },
+      { "name": "Class vs instance",     "icons": ["coding", "theory"] }
+    ],
+    [
+      { "name": "Program execution",     "icons": ["coding", "theory"] },
+      { "name": "Errors",                "icons": ["coding", "theory"] },
+      { "name": "Working with strings: basic methods", "icons": ["coding", "theory"] }
+    ]
+  ]
+}

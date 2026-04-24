@@ -84,4 +84,35 @@ test indicator: /python2
         return smallest
     ```
 
+Version 6
+---------
+
+mockup 2: knowledege map
+test indicator: /map1
+
+-[] modify the project to mock up a map of concepts for a programming tutorial system
+
+-[] make the middle panel show the concept map of Python programming concepts
+- use this screenshot as a guide: /screenshots/jetbrains/knowledge_map2.png
+
+-[] make the right hand panel, a top level "Learning" panel
+- with a brief overview about an introductory Python programing course
+- use this screenshot as a guide: /screenshots/jetbrains/about_course.png
+
+Version 7
+---------
+
+mockup 2: knowledege map refinement
+test indicator: /map2
+
+-[] can you modifiy the center panel to display something like this
+- screenshots/svg/skill_tree_TARGET.png
+
+-[] use this SVG as a reference, but use CSS SVG, so JSON data can be used to populate the hexagons
+- screenshots/svg/skill_tree.svg
+
+
+
+
+
 

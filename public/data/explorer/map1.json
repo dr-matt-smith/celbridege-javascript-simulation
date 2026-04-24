@@ -1,0 +1,30 @@
+{
+  "title": "Knowledge map",
+  "root": {
+    "name": "Python",
+    "type": "folder",
+    "expanded": true,
+    "children": [
+      {
+        "name": "Basics",
+        "type": "folder",
+        "expanded": true,
+        "children": [
+          { "name": "Simple programs", "type": "folder", "selected": true, "meta": "3 / 6" },
+          { "name": "Modules and packages", "type": "folder" }
+        ]
+      },
+      { "name": "Code quality", "type": "folder" },
+      { "name": "Working with data", "type": "folder" },
+      { "name": "Control flow", "type": "folder" },
+      {
+        "name": "Additional instruments",
+        "type": "folder",
+        "expanded": true,
+        "children": [
+          { "name": "Coding environments", "type": "folder" }
+        ]
+      }
+    ]
+  }
+}

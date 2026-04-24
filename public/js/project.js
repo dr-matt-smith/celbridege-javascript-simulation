@@ -3,7 +3,7 @@
 // Default project (URL "/"):         slug = null, files = data/<panel>/<panel>.json
 // Python-1 mockup (URL ".../python1"): slug = "python1", files = data/<panel>/python1.json
 
-const KNOWN_SLUGS = ['python1', 'python2'];
+const KNOWN_SLUGS = ['python1', 'python2', 'map1'];
 
 export function resolveProjectSlug(pathname) {
   if (!pathname) return null;

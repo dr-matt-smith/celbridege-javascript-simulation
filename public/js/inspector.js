@@ -3,19 +3,88 @@
 // Check-task layout ("check-task"):
 //   data = { layout: "check-task", tabs, description, warning, limits, actions, status, solution }
 //   description may be a string, { markdown: "..." }, or legacy { text: "..." } — all rendered as markdown.
+// Learning layout ("learning") — v6 /map1 About the course:
+//   data = { layout: "learning", crumb?, heading, tabs, description: { markdown },
+//            status?, nextButton: { label } }
 
 import { renderMarkdownInto } from './markdown.js';
 
 export function renderInspector(data, container) {
   container.replaceChildren();
+  container.classList.remove('check-task', 'learning');
   if (data && data.layout === 'check-task') {
     renderCheckTask(data, container);
+    return container;
+  }
+  if (data && data.layout === 'learning') {
+    renderLearning(data, container);
     return container;
   }
   for (const item of data.items || []) {
     container.appendChild(renderItem(item));
   }
   return container;
+}
+
+function renderLearning(data, container) {
+  container.classList.add('learning');
+
+  if (data.crumb) {
+    const c = document.createElement('div');
+    c.className = 'learning-crumb';
+    c.textContent = data.crumb;
+    container.appendChild(c);
+  }
+
+  if (data.heading) {
+    const h = document.createElement('h2');
+    h.className = 'learning-heading';
+    h.textContent = data.heading;
+    container.appendChild(h);
+  }
+
+  if (Array.isArray(data.tabs) && data.tabs.length) {
+    const tabBar = document.createElement('div');
+    tabBar.className = 'learning-tabs';
+    for (const tab of data.tabs) {
+      const el = document.createElement('button');
+      el.className = 'learning-tab' + (tab.active ? ' active' : '');
+      el.textContent = tab.name;
+      tabBar.appendChild(el);
+    }
+    container.appendChild(tabBar);
+  }
+
+  const md = markdownSource(data.description);
+  if (md) {
+    const wrap = document.createElement('div');
+    wrap.className = 'learning-description md';
+    renderMarkdownInto(md, wrap);
+    container.appendChild(wrap);
+  }
+
+  if (data.status) {
+    const s = document.createElement('div');
+    s.className = `learning-status ${data.status.kind || ''}`.trim();
+    const mark = document.createElement('span');
+    mark.className = 'learning-status-mark';
+    mark.textContent = '✓';
+    const txt = document.createElement('span');
+    txt.className = 'learning-status-text';
+    txt.textContent = data.status.text;
+    s.append(mark, txt);
+    container.appendChild(s);
+  }
+
+  if (data.nextButton) {
+    const bar = document.createElement('div');
+    bar.className = 'learning-actions';
+    const btn = document.createElement('button');
+    btn.className = 'learning-next-btn';
+    btn.textContent = data.nextButton.label;
+    bar.appendChild(btn);
+    container.appendChild(bar);
+  }
 }
 
 function renderCheckTask(data, container) {
