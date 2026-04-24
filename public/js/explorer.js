@@ -1,5 +1,5 @@
 // Render the Explorer file tree from JSON data.
-// data: { title, root: { name, type, expanded?, selected?, children? } }
+// data: { title, root: { name, type, expanded?, selected?, runnable?, children? } }
 
 export function renderExplorer(data, container) {
   container.replaceChildren();
@@ -36,6 +36,16 @@ function renderNode(node) {
   name.className = 'name';
   name.textContent = node.name;
   row.appendChild(name);
+
+  if (node.runnable) {
+    const run = document.createElement('button');
+    run.className = 'tree-run-btn';
+    run.title = 'Run';
+    run.setAttribute('aria-label', `Run ${node.name}`);
+    run.innerHTML = '<svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 3l9 5-9 5z" fill="currentColor"/></svg>';
+    run.addEventListener('click', (e) => e.stopPropagation());
+    row.appendChild(run);
+  }
 
   li.appendChild(row);
 

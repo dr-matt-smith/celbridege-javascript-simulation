@@ -1,0 +1,19 @@
+{
+  "tabs": [
+    {
+      "name": "my_functions.py",
+      "icon": "py",
+      "active": true,
+      "lines": [
+        [{ "t": "kw", "v": "def" }, { "v": " " }, { "t": "fn", "v": "my_min" }, { "v": "(*args):" }],
+        [{ "v": "    smallest = " }, { "t": "num", "v": "0" }],
+        [],
+        [{ "v": "    " }, { "t": "kw", "v": "for" }, { "v": " item " }, { "t": "kw", "v": "in" }, { "v": " args:" }],
+        [{ "v": "        " }, { "t": "kw", "v": "if" }, { "v": " item < smallest:" }],
+        [{ "v": "            smallest = item" }],
+        [],
+        [{ "v": "    " }, { "t": "kw", "v": "return" }, { "v": " smallest" }]
+      ]
+    }
+  ]
+}

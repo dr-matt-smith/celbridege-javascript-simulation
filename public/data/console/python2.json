@@ -1,0 +1,18 @@
+{
+  "title": "Check against test data",
+  "layout": "test-results",
+  "actions": [
+    { "label": "Re-run tests", "kind": "primary" },
+    { "label": "Add my own test", "kind": "secondary" }
+  ],
+  "columns": ["Call", "Expected output", "Actual output", "Pass/Fail"],
+  "rows": [
+    { "call": "my_min(-1)",            "expected": "-1", "actual": "-1", "status": "pass" },
+    { "call": "my_min(0)",             "expected": "0",  "actual": "0",  "status": "pass" },
+    { "call": "my_min(1)",             "expected": "1",  "actual": "0",  "status": "fail" },
+    { "call": "my_min(1, 2)",          "expected": "1",  "actual": "0",  "status": "fail" },
+    { "call": "my_min(2, 1)",          "expected": "1",  "actual": "0",  "status": "fail" },
+    { "call": "my_min(3, 1, 4, 1, 5)", "expected": "1",  "actual": "0",  "status": "fail" },
+    { "call": "my_min(7, 2)",          "expected": "2",  "actual": "0",  "status": "fail" }
+  ]
+}

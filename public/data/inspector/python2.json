@@ -1,0 +1,12 @@
+{
+  "title": "Task",
+  "layout": "check-task",
+  "tabs": [
+    { "name": "Description", "active": true },
+    { "name": "Submissions" },
+    { "name": "Theory" }
+  ],
+  "description": {
+    "markdown": "Write a Python function `my_min(<int1>, <int2>, ...)` that accepts a variable number of integer arguments, and returns the value of the smallest number.\n\nYou can safely assume:\n\n- there is always at least 1 integer argument\n- all arguments are integers\n\nSample input / output:\n\n- `my_min(3, 1, 4, 1, 5)` RETURNS: `1`\n- `my_min(7, 2)` RETURNS: `2`"
+  }
+}

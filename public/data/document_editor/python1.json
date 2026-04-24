@@ -1,0 +1,13 @@
+{
+  "tabs": [
+    {
+      "name": "calculator.py",
+      "icon": "py",
+      "active": true,
+      "lines": [
+        [{ "t": "com", "v": "# put your code here" }],
+        [{ "t": "fn", "v": "print" }, { "v": "(" }, { "t": "num", "v": "60" }, { "v": " / (" }, { "t": "num", "v": "5" }, { "v": " + " }, { "t": "num", "v": "15" }, { "v": ") * " }, { "t": "num", "v": "3" }, { "v": ")" }]
+      ]
+    }
+  ]
+}

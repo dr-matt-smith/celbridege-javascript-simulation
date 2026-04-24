@@ -1,0 +1,32 @@
+{
+  "title": "Task",
+  "layout": "check-task",
+  "tabs": [
+    { "name": "Description", "active": true },
+    { "name": "Submissions" },
+    { "name": "Theory" }
+  ],
+  "description": {
+    "text": "Write a Python program that will print the result of the following arithmetic expression: 60 ÷ the sum of 5 and 15, all times 3 ."
+  },
+  "warning": {
+    "prefix": "Do not use the ",
+    "highlight": "eval",
+    "suffix": " function."
+  },
+  "limits": [
+    { "label": "Memory limit", "value": "256 MB" },
+    { "label": "Time limit", "value": "5 seconds" }
+  ],
+  "actions": [
+    { "label": "Check", "kind": "primary" },
+    { "label": "Next", "kind": "secondary" }
+  ],
+  "status": { "text": "Correct", "meta": "A minute ago", "kind": "ok" },
+  "solution": {
+    "title": "Correct solution",
+    "links": [
+      { "label": "Peek Solution", "href": "#" }
+    ]
+  }
+}

@@ -4,39 +4,36 @@ import { renderExplorer } from './js/explorer.js';
 import { renderConsole } from './js/console.js';
 import { renderInspector } from './js/inspector.js';
 import { renderDocumentEditor } from './js/document_editor.js';
+import { resolveProjectSlug, panelUrl } from './js/project.js';
+
+const PROJECT_SLUG = resolveProjectSlug(window.location.pathname);
+console.info(`[project] slug="${PROJECT_SLUG ?? 'default'}" path="${window.location.pathname}"`);
 
 const PANELS = [
   {
     name: 'explorer',
-    url: 'data/explorer/explorer.json',
     mount: (data) => {
-      const body = document.getElementById('explorer-body');
-      renderExplorer(data, body);
-      const titleEl = document.querySelector('[data-panel-title="explorer"]');
-      if (titleEl && data.title) titleEl.textContent = data.title;
+      renderExplorer(data, document.getElementById('explorer-body'));
+      setPanelTitle('explorer', data.title);
+      if (data.root && data.root.name) setProjectChip(data.root.name);
     },
   },
   {
     name: 'console',
-    url: 'data/console/console.json',
     mount: (data) => {
       renderConsole(data, document.getElementById('console-body'));
-      const titleEl = document.querySelector('[data-panel-title="console"]');
-      if (titleEl && data.title) titleEl.textContent = data.title;
+      setPanelTitle('console', data.title);
     },
   },
   {
     name: 'inspector',
-    url: 'data/inspector/inspector.json',
     mount: (data) => {
       renderInspector(data, document.getElementById('inspector-body'));
-      const titleEl = document.querySelector('[data-panel-title="inspector"]');
-      if (titleEl && data.title) titleEl.textContent = data.title;
+      setPanelTitle('inspector', data.title);
     },
   },
   {
     name: 'document_editor',
-    url: 'data/document_editor/document_editor.json',
     mount: (data) => {
       renderDocumentEditor(
         data,
@@ -47,16 +44,27 @@ const PANELS = [
   },
 ];
 
+function setPanelTitle(panel, title) {
+  const el = document.querySelector(`[data-panel-title="${panel}"]`);
+  if (el && title) el.textContent = title;
+}
+
+function setProjectChip(name) {
+  const el = document.getElementById('project-chip-name');
+  if (el) el.textContent = name;
+}
+
 async function hydrate() {
   await Promise.all(PANELS.map(async (panel) => {
+    const url = panelUrl(panel.name, PROJECT_SLUG);
     try {
-      const res = await fetch(panel.url);
+      const res = await fetch(url);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
       panel.mount(data);
-      console.info(`[panel:${panel.name}] hydrated from ${panel.url}`);
+      console.info(`[panel:${panel.name}] hydrated from ${url}`);
     } catch (err) {
-      console.error(`[panel:${panel.name}] failed to load ${panel.url}:`, err);
+      console.error(`[panel:${panel.name}] failed to load ${url}:`, err);
     }
   }));
 

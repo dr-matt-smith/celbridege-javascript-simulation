@@ -27,7 +27,21 @@
       "Bash(kill %1)",
       "Bash(pkill -f \"PORT=3101 node server.js\")",
       "Bash(lsof -iTCP:3101 -sTCP:LISTEN)",
-      "Bash(kill 5843)"
+      "Bash(kill 5843)",
+      "Bash(curl -s -o /dev/null -w \"/ -> %{http_code}\\\\n\" http://localhost:3101/)",
+      "Bash(curl -s -o /dev/null -w \"/python1 -> %{http_code}\\\\n\" http://localhost:3101/python1)",
+      "Bash(curl -s -o /dev/null -w \"default explorer -> %{http_code}\\\\n\" http://localhost:3101/data/explorer/explorer.json)",
+      "Bash(curl -s -o /dev/null -w \"python1 explorer -> %{http_code}\\\\n\" http://localhost:3101/data/explorer/python1.json)",
+      "Bash(curl -s -o /dev/null -w \"python1 inspector -> %{http_code}\\\\n\" http://localhost:3101/data/inspector/python1.json)",
+      "Bash(PORT=3102 node *)",
+      "Bash(curl -s http://localhost:3102/data/explorer/python1.json)",
+      "Bash(curl -s http://localhost:3102/data/console/python1.json)",
+      "Bash(curl -s http://localhost:3102/data/document_editor/python1.json)",
+      "Bash(pkill -f \"PORT=3102 node server.js\")",
+      "Bash(PORT=3103 node *)",
+      "Bash(pkill -f \"PORT=3103 node server.js\")",
+      "Bash(PORT=3104 node *)",
+      "Bash(pkill -f \"PORT=3104 node server.js\")"
     ]
   },
   "enableAllProjectMcpServers": true,

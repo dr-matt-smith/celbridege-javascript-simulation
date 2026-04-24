@@ -1,0 +1,15 @@
+{
+  "title": "Terminal",
+  "lines": [
+    { "kind": "meta", "text": "Celbridge v0.2.6 - Python v3.13.12" },
+    {
+      "kind": "command",
+      "segments": [
+        { "text": ">>> run " },
+        { "text": "\"calculator.py\"", "style": "str" }
+      ]
+    },
+    { "kind": "output", "text": "9.0" },
+    { "kind": "prompt", "text": ">>> " }
+  ]
+}
